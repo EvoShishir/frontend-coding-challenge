@@ -3,12 +3,12 @@ import { Product } from "@/types";
 
 interface ProductListProps {
   products: Product[];
-  onOpenModal: (product: Product) => void;
+  onClick: (product: Product) => void;
 }
 
 export const ProductList: React.FC<ProductListProps> = ({
   products,
-  onOpenModal,
+  onClick,
 }) => (
   <div>
     {products.map((product) => (
@@ -16,7 +16,7 @@ export const ProductList: React.FC<ProductListProps> = ({
         <div className="flex">
           <div>{product.id}</div>. {product.name}
         </div>
-        <button onClick={() => onOpenModal(product)}>Details</button>
+        <button onClick={() => onClick(product)}>Details</button>
       </div>
     ))}
   </div>
